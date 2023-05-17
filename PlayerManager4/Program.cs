@@ -70,11 +70,11 @@ namespace PlayerManager4
                         Console.WriteLine("Bye!");
                         break;
                     case "5":
-                        // List players sorted by name in ascending order
+                        //List players sorted by name in ascending order
                         ListPlayersSortedByName(true);
                         break;
                     case "6":
-                        // List players sorted by name in descending order
+                        //List players sorted by name in descending order
                         ListPlayersSortedByName(false);
                         break;
                     default:
@@ -89,6 +89,30 @@ namespace PlayerManager4
 
                 // Loop keeps going until players choses to quit (option 4)
             } while (option != "4");
+        }
+
+        /// <summary>
+        /// List player names more easily
+        /// </summary>
+        /// <param name="ascending"></param>
+        private void ListPlayersSortedByName(bool ascending)
+        {
+            Console.WriteLine("\nList of players sorted by name");
+            Console.WriteLine("-------------\n");
+
+            // Create a comparer for sorting players by name
+            var comparer = new CompareByName(ascending);
+
+            // Sort the players using the comparer
+            var sortedPlayers = playerList.OrderBy(p => p, comparer);
+
+            // Show each player in the sorted list
+            foreach (Player p in sortedPlayers)
+            {
+                Console.WriteLine($" -> {p.Name} with a score of {p.Score}");
+            }
+
+            Console.WriteLine();
         }
 
         /// <summary>
