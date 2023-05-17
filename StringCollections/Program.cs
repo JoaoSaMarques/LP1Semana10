@@ -41,10 +41,18 @@ namespace StringCollections
             hashSet.Add("D");
 
             //Create strings for each element
+            //Lists
             Console.WriteLine("List:");
-            foreach (string item in list)
+            foreach (string letter in list)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(letter);
+            }
+
+            //Stacks
+            Console.WriteLine("\nStack:");
+            foreach (string letter in stack)
+            {
+                Console.WriteLine(letter);
             }
         }
 
