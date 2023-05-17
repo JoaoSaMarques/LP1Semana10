@@ -54,6 +54,13 @@ namespace StringCollections
             {
                 Console.WriteLine(letter);
             }
+
+            //Queues
+            Console.WriteLine("\nQueue:");
+            foreach (string letter in queue)
+            {
+                Console.WriteLine(letter);
+            }
         }
 
         
