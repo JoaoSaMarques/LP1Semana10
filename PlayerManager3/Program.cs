@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PlayerManager2
+namespace PlayerManager3
 {
     /// <summary>
     /// The player listing program.
@@ -145,45 +145,39 @@ namespace PlayerManager2
         /// <summary>
         /// Show all players with a score higher than a user-specified value.
         /// </summary>
+        private static void ListPlayers(IEnumerable<Player> playersToList)
+        {
+            Console.WriteLine("\nList of players");
+            Console.WriteLine("-------------\n");
+
+            // Sort the players by score in descending order
+            var sortedPlayers = playersToList.OrderByDescending(p => p.Score);
+
+            // Show each player in the sorted list
+            foreach (Player p in sortedPlayers)
+            {
+                Console.WriteLine($" -> {p.Name} with a score of {p.Score}");
+            }
+            Console.WriteLine();
+        }
+
         private void ListPlayersWithScoreGreaterThan()
         {
             // Minimum score user should have in order to be shown
             int minScore;
-            // Enumerable of players with score higher than the minimum score
-            IEnumerable<Player> playersWithScoreGreaterThan;
 
             // Ask the user what is the minimum score
             Console.Write("\nMinimum score player should have? ");
             minScore = Convert.ToInt32(Console.ReadLine());
 
             // Get players with score higher than the user-specified value
-            playersWithScoreGreaterThan =
-                GetPlayersWithScoreGreaterThan(minScore);
+            var playersWithScoreGreaterThan = GetPlayersWithScoreGreaterThan(minScore);
+
+            // Sort the players by score in descending order
+            playersWithScoreGreaterThan = playersWithScoreGreaterThan.OrderByDescending(p => p.Score);
 
             // List all players with score higher than the user-specified value
             ListPlayers(playersWithScoreGreaterThan);
-        }
-
-        /// <summary>
-        /// Get players with a score higher than a given value.
-        /// </summary>
-        /// <param name="minScore">Minimum score players should have.</param>
-        /// <returns>
-        /// An enumerable of players with a score higher than the given value.
-        /// </returns>
-        private IEnumerable<Player> GetPlayersWithScoreGreaterThan(int minScore)
-        {
-            // Cycle all players in the original player list
-            foreach (Player p in playerList)
-            {
-                // If the current player has a score higher than the
-                // given value....
-                if (p.Score > minScore)
-                {
-                    // ...return him as a member of the player enumerable
-                    yield return p;
-                }
-            }
         }
     }
 }
