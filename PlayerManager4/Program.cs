@@ -69,6 +69,14 @@ namespace PlayerManager4
                     case "4":
                         Console.WriteLine("Bye!");
                         break;
+                    case "5":
+                        // List players sorted by name in ascending order
+                        ListPlayersSortedByName(true);
+                        break;
+                    case "6":
+                        // List players sorted by name in descending order
+                        ListPlayersSortedByName(false);
+                        break;
                     default:
                         Console.Error.WriteLine("\n>>> Unknown option! <<<\n");
                         break;
