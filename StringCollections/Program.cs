@@ -5,9 +5,16 @@ namespace StringCollections
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            //List T
+            List<string> list = new List<string>();
+            //Stack T
+            Stack<string> stack = new Stack<string>();
+            //Queue T
+            Queue<string> queue = new Queue<string>();
+            //HashSet T
+            HashSet<string> hashSet = new HashSet<string>();
         }
     }
 }
