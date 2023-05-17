@@ -61,8 +61,13 @@ namespace StringCollections
             {
                 Console.WriteLine(letter);
             }
-        }
 
-        
+            //HashSets
+            Console.WriteLine("\nHashSet:");
+            foreach (string letter in hashSet)
+            {
+                Console.WriteLine(letter);
+            }
+        } 
     }
 }
