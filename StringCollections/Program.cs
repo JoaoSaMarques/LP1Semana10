@@ -39,6 +39,13 @@ namespace StringCollections
             hashSet.Add("C");
             hashSet.Add("B");
             hashSet.Add("D");
+
+            //Create strings for each element
+            Console.WriteLine("List:");
+            foreach (string item in list)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         
