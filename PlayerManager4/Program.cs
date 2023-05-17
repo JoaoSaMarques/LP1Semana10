@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace PlayerManager3
+namespace PlayerManager4
 {
     /// <summary>
     /// The player listing program.
