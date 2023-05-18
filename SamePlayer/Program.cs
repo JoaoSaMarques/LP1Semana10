@@ -3,33 +3,24 @@ using System.Collections.Generic;
 
 namespace SamePlayer
 {
-    //Class
-    public enum PlayerType { Tank, Fighter, Slayer, Mage, Controller, Marksmen }
-
-    //Player
-    public class Player
+    class Program
     {
-        //PlayerType
-        public PlayerType Type { get; set; }
-        public string Name { get; set; }
-
-        
-        public override bool Equals(object obj)
+        /// <summary>
+        /// Main Program
+        /// </summary>
+        /// <param name="args"></param>
+        static void Main(string[] args)
         {
-            if (obj == null || GetType() != obj.GetType())
-            {
-                return false;
-            }
+            //Hashset
+            HashSet<Player> setOfPlayers = new HashSet<Player>();
 
-            Player otherPlayer = (Player)obj;
-            return Type == otherPlayer.Type && Name == otherPlayer.Name;
-        }
-
-        //HashCode
-        public override int GetHashCode()
-        {
-            return Type.GetHashCode() ^ Name.GetHashCode();
+            //Player 1
+            Player player1 = new Player{Type =PlayerType.Tank, Name ="Ana"};
+            //Player 2
+            Player player2 = new Player{Type =PlayerType.Slayer, Name ="Paulo"};
+            //Player 3
+            Player player3 = new Player{Type =PlayerType.Tank, Name ="Ana"};
         }
     }
-
 }
+
