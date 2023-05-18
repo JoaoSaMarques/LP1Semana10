@@ -1,12 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SamePlayer
 {
-    class Program
+    //Class
+    public enum PlayerType { Tank, Fighter, Slayer, Mage, Controller, Marksmen }
+
+    //Player
+    public class Player
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+        //PlayerType
+        public PlayerType Type { get; set; }
+        public string Name { get; set; }
+
     }
+
 }
