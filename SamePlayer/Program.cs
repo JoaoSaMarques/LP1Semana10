@@ -25,7 +25,11 @@ namespace SamePlayer
             return Type == otherPlayer.Type && Name == otherPlayer.Name;
         }
 
-    
+        //HashCode
+        public override int GetHashCode()
+        {
+            return Type.GetHashCode() ^ Name.GetHashCode();
+        }
     }
 
 }
