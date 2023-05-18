@@ -20,7 +20,16 @@ namespace SamePlayer
             Player player2 = new Player{Type =PlayerType.Slayer, Name ="Paulo"};
             //Player 3
             Player player3 = new Player{Type =PlayerType.Tank, Name ="Ana"};
+
+            //Add player 1
+            setOfPlayers.Add(player1);
+            //Add player 2
+            setOfPlayers.Add(player2);
+            //Add player 3
+            setOfPlayers.Add(player3);
         }
+
+        
     }
 }
 
