@@ -13,6 +13,19 @@ namespace SamePlayer
         public PlayerType Type { get; set; }
         public string Name { get; set; }
 
+        
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Player otherPlayer = (Player)obj;
+            return Type == otherPlayer.Type && Name == otherPlayer.Name;
+        }
+
+    
     }
 
 }
