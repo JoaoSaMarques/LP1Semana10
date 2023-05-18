@@ -27,9 +27,14 @@ namespace SamePlayer
             setOfPlayers.Add(player2);
             //Add player 3
             setOfPlayers.Add(player3);
-        }
 
-        
+            //For each player inside the list
+            foreach (Player player in setOfPlayers)
+            {
+                //Write their name and class
+                Console.WriteLine($"{player.Name} is a {player.Type}");
+            }
+        }  
     }
 }
 
