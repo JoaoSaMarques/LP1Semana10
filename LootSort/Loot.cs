@@ -39,10 +39,16 @@ namespace LootSort
         public override string ToString() =>
             $"[{Kind,15}]\t{Value:f2}\t{Description}";
 
+        /// <summary>
+        /// Compare all the loot and organize them accordingly.
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
         public int CompareTo(Loot other)
         {
             if (other == null) return 1;
 
+            //IMPORTANT: Ordinals gives the position of something in a list.
             //This will be used to sort the loot alphabetically 
             int typeComparison = string.Compare(Kind.ToString(), 
             other.Kind.ToString(), StringComparison.Ordinal);
@@ -57,6 +63,9 @@ namespace LootSort
             if (valueComparison != 0)
                 //Sort between high and low values.
                 return -valueComparison; 
+            //If they are the same then sort them alphabetically.
+            return string.Compare(Description, other.Description, 
+            StringComparison.Ordinal);
         }
     }
 }
