@@ -83,9 +83,21 @@ namespace LootSort
 
         }
 
+        /// <summary>
+        /// Overrides HashCode and adds new value
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
-            
+            //Int Value
+            int hash = 20;
+            //Override value + get kind
+            hash = hash * 35 + Kind.GetHashCode();
+            //Override value + get value
+            hash = hash * 35 + Value.GetHashCode();
+            hash = hash * 35 + (Description != null ? Description.GetHashCode()
+             : 0);
+            return hash; 
         }
     }
 }
