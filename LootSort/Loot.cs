@@ -1,3 +1,5 @@
+using System;
+
 namespace LootSort
 {
     /// <summary>
@@ -44,9 +46,17 @@ namespace LootSort
             //This will be used to sort the loot alphabetically 
             int typeComparison = string.Compare(Kind.ToString(), 
             other.Kind.ToString(), StringComparison.Ordinal);
-            
+
+            //Compares the type of loot
             if (typeComparison != 0)
                 return typeComparison;
+
+            //If loot types are the same, compare values
+            int valueComparison = Value.CompareTo(other.Value);
+            //Depending on the value comparison:
+            if (valueComparison != 0)
+                //Sort between high and low values.
+                return -valueComparison; 
         }
     }
 }
