@@ -1,3 +1,5 @@
+using System;
+
 namespace PlayerManager3
 {
     public class Player : IComparable<Player>
@@ -13,8 +15,8 @@ namespace PlayerManager3
 
         public int CompareTo(Player other)
         {
-            //Compare players based on their scores
-            //Sorting will be in descending order (from highest to lowest)
+            // Compare players based on their scores
+            // Sorting will be in descending order (from highest to lowest)
             return other.Score.CompareTo(Score);
         }
     }
