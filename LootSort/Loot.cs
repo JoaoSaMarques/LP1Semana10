@@ -40,6 +40,13 @@ namespace LootSort
         public int CompareTo(Loot other)
         {
             if (other == null) return 1;
+
+            //This will be used to sort the loot alphabetically 
+            int typeComparison = string.Compare(Kind.ToString(), 
+            other.Kind.ToString(), StringComparison.Ordinal);
+            
+            if (typeComparison != 0)
+                return typeComparison;
         }
     }
 }
