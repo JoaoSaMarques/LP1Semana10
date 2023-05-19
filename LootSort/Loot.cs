@@ -80,7 +80,13 @@ namespace LootSort
         /// <returns></returns>
         public override bool Equals(object obj)
         {
+            //If there is no object then it will get a type.
+            if (obj == null || GetType() != obj.GetType())
+                return false;
 
+            Loot other = (Loot)obj;
+            return Kind == other.Kind && Value == other.Value 
+            && Description == other.Description;
         }
 
         /// <summary>
