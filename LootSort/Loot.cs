@@ -65,7 +65,7 @@ namespace LootSort
             if (valueComparison != 0)
                 //Sort between high and low values.
                 return -valueComparison; 
-                
+
             //C)
             //If they are the same then sort them alphabetically.
             return string.Compare(Description, other.Description, 
@@ -79,5 +79,13 @@ namespace LootSort
         /// <param name="obj"></param>
         /// <returns></returns>
         public override bool Equals(object obj)
+        {
+
+        }
+
+        public override int GetHashCode()
+        {
+            
+        }
     }
 }
